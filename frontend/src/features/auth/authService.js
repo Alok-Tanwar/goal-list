@@ -1,6 +1,12 @@
 import axios from 'axios'
 
-const API_URL = '/api/users/'
+const url =
+process.env.NODE_ENV === 'production'
+  ? `https://devconnector-.goalslist.herokuapp.com/api/users`
+  : 'http://localhost:5000/api/users';
+
+
+const API_URL = url
 
 // Register user
 const register = async (userData) => {
